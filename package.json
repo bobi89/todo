@@ -2,19 +2,21 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "chai": "^3.4.1",
     "express": "^4.13.3",
     "method-override": "^2.3.5",
+    "mocha": "^2.3.4",
     "mongoose": "^4.3.6",
     "morgan": "^1.6.1",
     "nodemon": "^1.8.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./bin/www",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
