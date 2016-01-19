@@ -16,7 +16,9 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 // application -------------------------------------------------------------
-app.use('/api/todos', require('./api/routes/todos'))
+app.use('/api/auth', require('./api/auth/route'));
+app.use('/api/todos', require('./api/todo/route'));
+app.use('/api/users', require('./api/user/route'));
 app.get('*', function(req, res) {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 })

@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var Todo = require('../models/todos');
+var Todo = require('./model');
 
 // get all todos
 router.get('/', function(req, res) {
