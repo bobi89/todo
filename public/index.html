@@ -15,16 +15,23 @@
         html                    { overflow-y:scroll; }
         body                    { padding-top:50px; }
         #todo-list              { margin-bottom:30px; }
+        #top-bar                { margin-bottom:10px; }
     </style>
 
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+
     <script src="core.js"></script>
+    <script src="/controllers/main.js"></script>
+    <script src="/controllers/auth.js"></script>
+
+    <script src="/services/auth.js"></script>
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
-<body ng-controller="mainController">
-    <ng-include src="'/partials/content.html'"></ng-include>
+<body ng-controller="coreController">
+    <ng-include src="'/views/topBar.html'"></ng-include>
+    <ng-include src="'/views/content.html'" ng-show="isLoggedIn()" class="ng-hide"></ng-include>
 </body>
 </html>

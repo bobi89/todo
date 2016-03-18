@@ -1,0 +1,6 @@
+
+<div id="top-bar" class="container">
+
+  <ng-include src="'/views/loggedOut.html'" ng-hide="isLoggedIn()"></ng-include>
+  <ng-include src="'/views/loggedIn.html'" ng-show="isLoggedIn()" class="ng-hide"></ng-include>
+</div>
