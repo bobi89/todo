@@ -1,10 +1,10 @@
-todo.controller("authController", function($scope, $http, authService) {
+todo.controller("authController", function($scope, $http, AuthService) {
   $scope.formData = {};
 
   $scope.logIn = function() {
     $http.post('/api/auth', $scope.formData)
       .success(function(data) {
-        authService.saveToken(data);
+        AuthService.saveToken(data);
         $scope.formData = {}; // clear the form so our user is ready to enter another
         console.log(data);
       })
@@ -14,6 +14,6 @@ todo.controller("authController", function($scope, $http, authService) {
   };
 
   $scope.logOut = function() {
-    authService.removeToken();
+    AuthService.removeToken();
   };
 });
